@@ -1,0 +1,286 @@
+@mixin class-grid-container($rows, $columns, $width, $height) {
+
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    height: $height;
+    width: $width;
+}
+
+@mixin class-grid-container-same-size($rows, $columns, $width, $height) {
+    $size-columns: (100/$columns)*1%;
+    $size-rows: (100/$rows)*1%;
+
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($size-columns, $size-columns));
+    grid-template-rows: repeat($rows, minmax($size-rows, $size-rows));
+    height: $height;
+    width: $width;
+}
+
+@mixin class-grid-areas($areas, $rows, $columns, $width, $height) {
+    display: grid;
+    grid-template-areas: $areas;
+    grid-template-rows: $rows;
+    grid-template-columns: $columns;
+    height: $height;
+    width: $width;
+}
+
+@mixin class-header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+@mixin class-footer {
+    display: flex;
+    background-color: orange;
+    color: black;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: bold;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin class-images($width, $height) {
+    height: $height;
+    width: $width;
+    //object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+// Small devices
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+    .grid-container{
+        @include class-grid-container(20% 60% 20%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header();
+        }
+        .body {
+            @include class-grid-areas(
+                'a a b'
+                'a a c'
+                , repeat(2, 1fr), repeat(3, 1fr), 100vw, 100%);
+            .main-new {
+                grid-area: a;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .second-new {
+                grid-area: b;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .third-new {
+                grid-area: c;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+        }
+        .footer {
+            @include class-footer();
+        }
+    }
+}
+
+// Medium devices  
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .grid-container{
+        @include class-grid-container(20% 60% 20%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header();
+        }
+        .body {
+            @include class-grid-areas(
+                'a a b'
+                'a a c'
+                , repeat(2, 1fr), repeat(3, 1fr), 100vw, 100%);
+            .main-new {
+                grid-area: a;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .second-new {
+                grid-area: b;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .third-new {
+                grid-area: c;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+        }
+        .footer {
+            @include class-footer();
+        }
+    }
+}
+
+// Large devices
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .grid-container{
+        @include class-grid-container(15% 75% 10%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header();
+        }
+        .body {
+            @include class-grid-areas(
+                'a a b'
+                'a a c'
+                , repeat(2, 1fr), repeat(3, 1fr), 100vw, 100%);
+            .main-new {
+                grid-area: a;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%)
+                }
+            }
+            .second-new {
+                grid-area: b;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .third-new {
+                grid-area: c;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+        }
+        .footer {
+            @include class-footer();
+        }
+    }
+}
+
+// Extra large devices
+@media only screen and (min-width: 993px) {
+    .grid-container{
+        @include class-grid-container(15% 75% 10%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header();
+        }
+        .body {
+            @include class-grid-areas(
+                'a a b'
+                'a a c'
+                , repeat(2, 1fr), repeat(3, 1fr), 100vw, 100%);
+            .main-new {
+                grid-area: a;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .second-new {
+                grid-area: b;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+            .third-new {
+                grid-area: c;
+                overflow: hidden;
+                @include class-grid-container(30% 70%, 100%, 100%, 100%);
+                .title {
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .main-image {
+                    @include class-images(90%, 90%);
+                }
+            }
+        }
+        .footer {
+            @include class-footer();
+        }
+    }
+}

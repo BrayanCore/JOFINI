@@ -1,0 +1,24 @@
+<div class="grid-container">
+    <div class="header">
+        <div *ngFor="let label of labels; let i = index">
+            <a class="link" routerLink="{{links[i]}}" routerLinkActive="active">{{label}}</a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="main-new">
+            <h1 class="title">{{titles[0]}}</h1>
+            <img class="main-image" src="assets\images\paying-off-ccs_toolbox.jpg" alt="">
+        </div>
+        <div class="second-new">
+            <h2 class="title">{{titles[1]}}</h2>
+            <img class="main-image" src="assets\images\5-usos-de-la-firma-electrónica-1024x682.jpg" alt="">
+        </div>
+        <div class="third-new">
+            <h2 class="title">{{titles[2]}}</h2>
+            <img class="main-image" src="assets\images\ahorro.jpg" alt="">
+        </div>
+    </div>
+    <div class="footer">
+        <p style="margin-right: 2%;">EQUIPO 7</p>
+    </div>
+</div>
