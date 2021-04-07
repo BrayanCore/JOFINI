@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { Section1Component } from './components/section1/section1.component';
 import { Section2Component } from './components/section2/section2.component';
 import { Section3Component } from './components/section3/section3.component';
@@ -24,7 +26,8 @@ import { Section5Component } from './components/section5/section5.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

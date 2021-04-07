@@ -1,1 +1,148 @@
-<p>section2 works!</p>
+<div class="grid-container">
+    <div class="header">
+        <div *ngFor="let label of labels; let i = index">
+            <a class="link" routerLink="{{links[i]}}" routerLinkActive="active">{{label}}</a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="screen-1">
+            <div class="images">
+                <img class="image" src="../../../assets/images/firma-electronica.png" alt="Firma Eléctronica">
+            </div>
+            <div class="definition">
+                <h2 style="margin:0%">¿Qué es?</h2>
+                <p>
+                    Es un conjunto de datos que se adjuntan a un mensaje electrónico, cuyo
+                    propósito es identificar al emisor del mensaje como autor legítimo de
+                    éste, tal y como si se tratara de una firma autógrafa.
+                </p>
+                <p>    
+                    Una Firma Electrónica permite:
+                </p>
+                <ul>
+                    <li>
+                        Identificar quién es el autor de un
+                        documento electrónico.
+                    </li>
+                    <li>
+                        Verificar que el documento
+                        electrónico no haya sido alterado.
+                    </li>
+                </ul>
+            </div>
+            <div class="uses">
+                <h2 style="margin: 0;">Ejemplos de usos:</h2>
+                <ul>
+                    <li>
+                        Utilización de la Firma Electrónica
+                        como medio de autenticación y/o
+                        firmado para los servidores públicos.
+                    </li>
+                    <li>
+                        Generación de citas para atención
+                        presencial.
+                    </li>
+                    <li>
+                        Notificaciones electrónicas a los
+                        ciudadanos.
+                    </li>
+                    <li>
+                        Validador de certificados y
+                        constancias.
+                    </li>
+                    <li>
+                        Pago de contribuciones o derechos. 
+                    </li>
+                    <li>
+                        Trámites administrativos.
+                    </li>
+                    <li>
+                        Consulta del estado que guardan tramites
+                        y servicios.
+                    </li>
+                </ul>
+            </div>
+            <div class="benefits">
+                <h2 class="title">Beneficios</h2>
+                <div class="government">
+                    <img class="image" src="../../../assets/images/government.png" alt="Government">
+                    <p class="subtitle">Gobierno</p>
+                    <ul class="list">
+                        <li class="item" *ngFor="let item of benefitsGovernment">
+                            {{item}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="citizenship">
+                    <img class="image" src="../../../assets/images/citizenship.png" alt="Citizenship">
+                    <p class="subtitle">Cuidadanía</p>
+                    <ul class="list">
+                        <li class="item" *ngFor="let item2 of benefitsCitizenship">
+                            {{item2}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="screen-2">
+            <div class="characteristics">
+                <div class="title">
+                    <h2 class="text">Características.</h2>
+                </div>
+                <div class="image">
+                    <img class="pic" src="../../../assets/images/firma-electronica2.gif" alt="Firma">
+                </div>
+                <div class="list">
+                    <ul>
+                        <li *ngFor="let item of characteristics">
+                            <strong>{{item.name}}:</strong> {{item.value}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="documents">
+                <h2 class="title">Documentos necesarios:</h2>
+                <table class="table">
+                    <tr>
+                        <th style="border-bottom: .2rem solid black;">
+                            Documento requerido
+                        </th>
+                        <th style="border-bottom: .2rem solid black;">
+                            Presentación
+                        </th>
+                    </tr>
+                    <tr *ngFor="let document of documents">
+                        <td>{{ document.name }}</td>
+                        <td>{{ document.value }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="costs">
+                <h2 class="title">Costos:</h2>
+                <table class="table">
+                    <tr>
+                        <th style="border-bottom: .2rem solid black;">
+                            Concepto
+                        </th>
+                        <th style="border-bottom: .2rem solid black;">
+                            Monto
+                        </th>
+                    </tr>
+                    <tr *ngFor="let cost of costs">
+                        <td>{{ cost.name }}</td>
+                        <td>{{ cost.value }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="procedure">
+                <h2 class="title">Opciones para realizar tu trámite:</h2>
+                <h3 class="title">Presencial:</h3>
+                <p style="text-align: center;">Acude ante cualquier oficina del SAT o en los <a title="Abre en nueva ventana" target="_blank" href="https://www.sat.gob.mx/personas/directorio-nacional-de-modulos-de-servicios-tributarios">Módulos</a> de Servicios Tributarios que ofrecen ese servicio, con previa cita.</p>
+                <h3 class="title">Citas por Internet:</h3>
+                <button class="button" (click)="goToLink('https://citas.sat.gob.mx/citasat/home.aspx')" mat-raised-button color="primary">
+                    Haz tu cita
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

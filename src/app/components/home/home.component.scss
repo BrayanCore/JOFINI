@@ -5,6 +5,8 @@
     grid-template-rows: $rows;
     height: $height;
     width: $width;
+    place-items: center;
+
 }
 
 @mixin class-grid-container-same-size($rows, $columns, $width, $height) {
@@ -27,12 +29,17 @@
     width: $width;
 }
 
-@mixin class-header {
+@mixin class-header($link-size) {
     background-color: black;
     color: white;
     text-align: center;
     align-items: center;
     font-weight: 500;
+    .link {
+        font-size: $link-size;
+        color: white;
+        text-decoration: none;
+    } 
 }
 
 @mixin class-footer {
@@ -54,11 +61,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.link {
-    color: white;
-    text-decoration: none;
+    max-width: 95%;
+    cursor: pointer;
 }
 
 // Small devices
@@ -67,7 +71,7 @@
         @include class-grid-container(20% 60% 20%, 100%, 100vw, 100vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(.6rem);
         }
         .body {
             @include class-grid-areas(
@@ -80,10 +84,13 @@
                 @include class-grid-container(30% 70%, 100%, 100%, 100%);
                 .title {
                     text-align: center;
-                    overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    font-size: .6rem;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .second-new {
@@ -92,10 +99,13 @@
                 @include class-grid-container(30% 70%, 100%, 100%, 100%);
                 .title {
                     text-align: center;
-                    overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    font-size: .6rem;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .third-new {
@@ -104,10 +114,13 @@
                 @include class-grid-container(30% 70%, 100%, 100%, 100%);
                 .title {
                     text-align: center;
-                    overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    font-size: .6rem;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
         }
@@ -123,7 +136,7 @@
         @include class-grid-container(20% 60% 20%, 100%, 100vw, 100vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
             @include class-grid-areas(
@@ -137,9 +150,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .second-new {
@@ -149,9 +165,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .third-new {
@@ -161,9 +180,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
         }
@@ -179,7 +201,7 @@
         @include class-grid-container(15% 75% 10%, 100%, 100vw, 100vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
             @include class-grid-areas(
@@ -193,9 +215,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%)
+                    @include class-images(auto, 95%)
                 }
             }
             .second-new {
@@ -205,9 +230,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .third-new {
@@ -217,9 +245,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
         }
@@ -235,7 +266,7 @@
         @include class-grid-container(15% 75% 10%, 100%, 100vw, 100vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
             @include class-grid-areas(
@@ -248,10 +279,13 @@
                 @include class-grid-container(30% 70%, 100%, 100%, 100%);
                 .title {
                     text-align: center;
-                    overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    font-size: 2rem;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .second-new {
@@ -261,9 +295,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
             .third-new {
@@ -273,9 +310,12 @@
                 .title {
                     text-align: center;
                     overflow: hidden;
+                    margin: 0%;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
                 .main-image {
-                    @include class-images(90%, 90%);
+                    @include class-images(auto, 95%);
                 }
             }
         }
