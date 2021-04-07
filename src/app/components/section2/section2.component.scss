@@ -14,12 +14,17 @@
 
 }
 
-@mixin class-header {
+@mixin class-header($link-size) {
     background-color: black;
     color: white;
     text-align: center;
     align-items: center;
     font-weight: 500;
+    .link {
+        font-size: $link-size;
+        color: white;
+        text-decoration: none;
+    }
 }
 
 @mixin class-grid-container-same-size($rows, $columns, $width, $height) {
@@ -33,28 +38,33 @@
     width: $width;
 }
 
-@mixin class-body {
-    width: 100vw;
-    height: 185vh;
+@mixin class-body($width, $height, $grid-template-rows, $grid-columns-screen1, $grid-rows-screen1, $grid-columns-screen2, $grid-rows-screen2, $grid-areas-screen2) {
+    // width: 100vw;
+    // height: 185vh;
+    width: $width;
+    height: $height;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 85vh 100vh;
+    // grid-template-rows: 85vh 100vh;
+    grid-template-rows: $grid-template-rows;
     .screen-1 {
-        @include class-screen-1();
+        @include class-screen-1($grid-columns-screen1, $grid-rows-screen1);
     };
     .screen-2 {
-        @include class-screen-2();
+        @include class-screen-2($grid-columns-screen2, $grid-rows-screen2, $grid-areas-screen2);
     };
 };
 
-@mixin class-screen-1 {
+@mixin class-screen-1($grid-columns, $grid-rows) {
     height: 100%;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    // grid-template-columns: 50% 50%;
+    // grid-template-rows: 50% 50%;
+    grid-template-columns: $grid-columns;
+    grid-template-rows: $grid-rows;
     .images {
         width: 100%;
         height: 100%;
@@ -74,6 +84,11 @@
         @include center-things();
         border: 1px solid black;
         flex-direction: column;
+        .list {
+            max-height: 100%;
+            max-width: 100%;
+            overflow: auto;
+        }
     }
     .benefits{
         border: 1px solid black;
@@ -134,18 +149,20 @@
     }
 }
 
-@mixin class-screen-2 {
+@mixin class-screen-2($grid-columns, $grid-rows, $grid-areas) {
     height: 100%;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 33.3% 33.3% 33.3%;
-    grid-template-areas: 
-    "a a"
-    "b c"
-    "d d";
+    // grid-template-columns: 50% 50%;
+    // grid-template-rows: 33.3% 33.3% 33.3%;
+    grid-template-columns: $grid-columns;
+    grid-template-rows: $grid-rows;
+    grid-template-areas: $grid-areas;
+    // "a a"
+    // "b c"
+    // "d d";
     .characteristics {
         grid-area: a;
         display: grid;
@@ -179,6 +196,11 @@
             grid-area: c;
             display: flex;
             align-items: center;
+            .items {
+                max-height: 100%;
+                max-width: 100%;
+                overflow: auto;
+            }
         }
     }
     .documents {
@@ -228,21 +250,26 @@
     }
 }
 
-.link {
-    color: white;
-    text-decoration: none;
-}
-
 // Small devices
 @media only screen and (min-width: 0px) and (max-width: 576px) {
     .grid-container{
         @include class-grid-container(10% 90%, 100%, 100vw, 200vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(.6rem);
         }
         .body {
-            @include class-body();
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body(
+                100vw, 370vh, 
+                170vh 200vh,
+                100%, 20% 30% 25% 25%, 
+                100%, 25% 25% 25% 25%,
+                "a"
+                "b"
+                "c" 
+                "d"
+            );
         }
     }
 }
@@ -253,10 +280,19 @@
         @include class-grid-container(10% 90%, 100%, 100vw, 200vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
-            @include class-body();
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body(
+                100vw, 185vh,
+                85vh 100vh,
+                50% 50%, 50% 50%, 
+                50% 50%, 33.3% 33.3% 33.3%, 
+                "a a"
+                "b c"
+                "d d"
+            );
         }
     }
 }
@@ -267,10 +303,19 @@
         @include class-grid-container(7.5% 92.5%, 100%, 100vw, 200vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
-            @include class-body();
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body(
+                100vw, 185vh,
+                85vh 100vh,
+                50% 50%, 50% 50%, 
+                50% 50%, 33.3% 33.3% 33.3%,
+                "a a"
+                "b c"
+                "d d"
+            );
         }
     }
 }
@@ -281,10 +326,19 @@
         @include class-grid-container(7.5% 92.5%, 100%, 100vw, 200vh);
         .header {
             @include class-grid-container-same-size(1, 5, 100vw, 100%);
-            @include class-header();
+            @include class-header(1rem);
         }
         .body {
-            @include class-body();
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body(
+                100vw, 185vh,
+                85vh 100vh,
+                50% 50%, 50% 50%, 
+                50% 50%, 33.3% 33.3% 33.3%,
+                "a a"
+                "b c"
+                "d d"
+            );
         }
     }
 }
