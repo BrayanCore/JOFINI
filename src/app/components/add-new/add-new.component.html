@@ -1,0 +1,27 @@
+<div class="container">
+
+    <h4>Selecciona la sección.</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Sección seleccionada</mat-label>
+        <mat-select [formControl]="sectionSelected" name="section">
+            <mat-option *ngFor="let section of sections" [value]="section.value">
+                {{section.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <form [formGroup]="newForm" class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Titulo de noticia</mat-label>
+            <input formControlName="title" matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field><br>
+    
+        <mat-form-field class="field-content example-full-width">
+            <mat-label>Contenido de la noticia</mat-label>
+            <textarea formControlName="content" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+    </form>
+
+    <button [disabled]="!newForm.valid" mat-raised-button class="button-send" color="primary" (click)="addNew()">ENVIAR</button>
+
+</div>

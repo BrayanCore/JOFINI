@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +16,12 @@ import { Section2Component } from './components/section2/section2.component';
 import { Section3Component } from './components/section3/section3.component';
 import { Section4Component } from './components/section4/section4.component';
 import { Section5Component } from './components/section5/section5.component';
+import { AddNewComponent } from './components/add-new/add-new.component';
+
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,15 +31,23 @@ import { Section5Component } from './components/section5/section5.component';
     Section2Component,
     Section3Component,
     Section4Component,
-    Section5Component
+    Section5Component,
+    AddNewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
