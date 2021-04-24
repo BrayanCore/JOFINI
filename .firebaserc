@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "jofini-a1b80": {
+      "hosting": {
+        "jofini": [
+          "jofini-a1b80"
+        ]
+      }
+    }
+  }
+}
