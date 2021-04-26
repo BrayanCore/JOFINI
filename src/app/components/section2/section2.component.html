@@ -12,53 +12,25 @@
             <div class="definition">
                 <h2 style="margin:0%">¿Qué es?</h2>
                 <p>
-                    Es un conjunto de datos que se adjuntan a un mensaje electrónico, cuyo
-                    propósito es identificar al emisor del mensaje como autor legítimo de
-                    éste, tal y como si se tratara de una firma autógrafa.
+                    {{definition}}
                 </p>
                 <p>    
                     Una Firma Electrónica permite:
                 </p>
                 <ul>
                     <li>
-                        Identificar quién es el autor de un
-                        documento electrónico.
+                        {{uses[0]}}
                     </li>
                     <li>
-                        Verificar que el documento
-                        electrónico no haya sido alterado.
+                        {{uses[1]}}
                     </li>
                 </ul>
             </div>
             <div class="uses">
                 <h2 style="margin: 0;">Ejemplos de usos:</h2>
                 <ul class="list">
-                    <li>
-                        Utilización de la Firma Electrónica
-                        como medio de autenticación y/o
-                        firmado para los servidores públicos.
-                    </li>
-                    <li>
-                        Generación de citas para atención
-                        presencial.
-                    </li>
-                    <li>
-                        Notificaciones electrónicas a los
-                        ciudadanos.
-                    </li>
-                    <li>
-                        Validador de certificados y
-                        constancias.
-                    </li>
-                    <li>
-                        Pago de contribuciones o derechos. 
-                    </li>
-                    <li>
-                        Trámites administrativos.
-                    </li>
-                    <li>
-                        Consulta del estado que guardan tramites
-                        y servicios.
+                    <li *ngFor="let example of examples">
+                        {{example}}
                     </li>
                 </ul>
             </div>
