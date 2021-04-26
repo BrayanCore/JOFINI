@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SectionService } from 'src/app/services/section.service';
 
 @Component({
   selector: 'app-section2',
@@ -10,49 +11,19 @@ export class Section2Component implements OnInit {
   labels: string[] = ['IMPUESTOS', 'PAGINA PRINCIPAL', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
   links: string[] = ['/taxs', '/', '/credit-cards', '/saving-tips', '/bills'];
 
-  benefitsGovernment: string[] = [
-    'Acceso a la información de los ciudadanos vía web.',
-    'Atención inmediata.',
-    'Transparencia en la acción gubernamental.',
-    'Eficiencia y eficacia en el actuar del gobierno'
-  ];
+  definition: string = "";
 
-  benefitsCitizenship: string[] = [
-    'Identificarse ante terceros.',
-    'Firmar documentos electrónicamente.',
-    'Evitar la suplantación de identidad.',
-    'Proteger la información transmitida'
-  ];
+  uses: string[] = [];
 
-  characteristics: any[] = [
-    {
-      name: "Equivalencia Funcional",
-      value: 'La Firma Electrónica tiene la misma validez que la Firma Autógrafa'
-    },
-    {
-      name: "Autenticidad",
-      value: "Permite dar certeza de que un documento electrónico o, en su caso, un mensaje de datos ha sido emitido por el firmante, por lo cual es atribuible a él mismo al igual que las consecuencias jurídicas."
-    },
-    {
-      name: "Integridad",
-      value: "En un documento electrónico o, en su caso, en un mensaje de datos permite dar certeza de que éste ha permanecido completo e inalterado desde su firma."
-    }
-  ];
+  examples: string[] = [];
 
-  documents: any[] = [
-    {
-      name: "Memoria USB",
-      value: 'Original'
-    },
-    {
-      name: "Dirección de correo electrónico vigente",
-      value: "Original"
-    },
-    {
-      name: "Solicitud de Certificado de e.firma",
-      value: "Original"
-    }
-  ];
+  benefitsGovernment: string[] = [];
+
+  benefitsCitizenship: string[] = [];
+
+  characteristics: any[] = [];
+
+  documents: any[] = [];
 
   costs: any[] = [
     {
@@ -61,9 +32,88 @@ export class Section2Component implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private _sectionService: SectionService
+  ) { }
 
   ngOnInit(): void {
+
+    this._sectionService.getNews(1).subscribe(
+      (data) => {
+
+        this.definition = "";
+        this.uses = [];
+        this.examples = [];
+        this.benefitsGovernment = [];
+        this.benefitsCitizenship = [];
+        this.characteristics = [];
+        this.documents = [];
+
+        data.forEach(
+          element => {
+            
+            switch (element["title"]) {
+              case "Definicion":
+                this.definition = element["content"]
+                break;
+              case "Uso 1":
+                this.uses.push(element["content"])
+                break;
+              case "Uso 2":
+                this.uses.push(element["content"])
+                break;
+              case "Ejemplo":
+                this.examples.push(element["content"])
+                break;
+              case "Gobierno":
+                this.benefitsGovernment.push(element["content"])
+                break;
+              case "Ciudadania":
+                this.benefitsCitizenship.push(element["content"])
+                break;
+              case "Equivalencia Funcional":
+                this.characteristics.push(
+                  {
+                    name: element["title"],
+                    value: element["content"]
+                  }
+                )
+                break;
+              case "Autenticidad":
+                this.characteristics.push(
+                  {
+                    name: element["title"],
+                    value: element["content"]
+                  }
+                )
+                break;
+              case "Integridad":
+                this.characteristics.push(
+                  {
+                    name: element["title"],
+                    value: element["content"]
+                  }
+                )
+                break;
+              case "Documento":
+                this.documents.push(
+                  {
+                    name: element["content"],
+                    value: "Original"
+                  }
+                );
+                break;
+            
+              default:
+                break;
+            }
+
+          }
+        )
+
+      }
+    )
+
   }
 
   goToLink(url: string){

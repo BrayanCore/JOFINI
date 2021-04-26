@@ -47,15 +47,11 @@ export class AddNewComponent implements OnInit {
 
   addNew() {
 
-    let newToAdd: New = new New();
-    newToAdd.title = this.newForm.controls.title.value;
+    let newToAdd = {} as New;
     newToAdd.content = this.newForm.controls.content.value;
+    newToAdd.title = this.newForm.controls.title.value;
 
-    let example = {} as New;
-    example.content = this.newForm.controls.content.value;
-    example.title = this.newForm.controls.title.value;
-
-    this._sectionService.addNew(example, this.sections[this.sectionSelected.value].viewValue);
+    this._sectionService.addNew(newToAdd, this.sections[this.sectionSelected.value].viewValue);
     this.newForm.reset();
     this.sectionSelected.setValue(this.sections[0].value);
     Swal.fire('NOTICIA GUARDADA', 'CIERRA EL DIALOGO', 'success')
