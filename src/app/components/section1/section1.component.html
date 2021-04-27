@@ -1,1 +1,122 @@
-<p>section1 works!</p>
+<div class="grid-container">
+    <div class="header">
+        <div *ngFor="let label of labels; let i = index">
+            <a class="link" routerLink="{{links[i]}}" routerLinkActive="active">{{label}}</a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="screen-1">
+            <div class="images">
+                <img class="image" src="../../../assets/images/Impuestos.jpg" alt="Impuestos">
+            </div>
+            <div class="definition">
+                <h2 style="margin:0%"> 
+                    <p>Impuestos</p>   
+                    <p>¿Que son?</p> 
+                      </h2>
+                <p style="text-align: justify;">
+                    
+                   {{Impuestos}}
+                </p>
+                    <p style="text-align: justify;"> 
+                    {{utilidad}}
+                    </p>
+
+                    <p>    
+                    
+                </p>
+                
+
+
+            </div>
+
+           
+
+            <div class="tiposImpuestos">
+                <h2 style="margin: 0;">    Tipos de impuestos      </h2>
+                <ul class="list">
+                    <div class="list">
+                        <ul class="items">
+                            <li *ngFor="let item of tiposImpuestos">
+                                <strong>{{item.name}}:</strong> {{item.value}}
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <div class="benefits">
+                <h2 class="title">     ¿ Y como declaro mis impuestos?     </h2>
+                <div class="government">
+                   
+                   <p>Si decides declarar tus impuestos por ti mismo tienes que seguir los siguientes pasos:</p>
+                   <ul class="list">
+                    <div class="list">
+                        <ul class="items">
+                            <li *ngFor="let item of pasosdeclarar">
+                                <strong>{{item.name}}:</strong> {{item.value}}
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+                  
+                    
+                </div>
+            </div>
+        </div>
+        <div class="screen-2">
+            <div class="characteristics">            
+                    
+                <div class="title">
+                   
+                    <h1 class="text">   Tipos de contribuyentes  </h1>
+                    
+                </div>
+                
+                <div class="list">
+                    <ul class="items">
+                       
+                  <p>  {{contribuyentes}}                    </p>
+                    <br>
+                   <li style="text-align: justify;" *ngFor="let item of tiposcontribuyentes">
+                    <strong>{{item.name}}:</strong> {{item.value}}
+                 </li>
+ 
+                    
+
+                    </ul>
+                </div>
+                
+
+
+
+             
+                <h1 class="sat">   Pero... ¿Que es el SAT? </h1>
+                <div class="satt">
+                <p style="text-align: justify;">
+                   {{queessat}}
+                    </p>  
+
+
+
+            </div>
+           
+                    <div class="imagen">
+                        <img class="ima" href="https://www.sat.gob.mx/personas/iniciar-sesion" src="../../../assets/images/LogoSAT.png" alt="LogoSAT">
+                    </div>
+                
+           
+            <div class="procedure">
+                <h2 class="title">          </h2>
+                <h3 class="title">          </h3>
+                <p style="text-align: center;">          <a title="Abre en nueva ventana" target="_blank" href="https://www.sat.gob.mx/personas/directorio-nacional-de-modulos-de-servicios-tributarios">   </a> </p>
+                <h3 class="title">          </h3>
+                <button class="button" (click)="goToLink('https://citas.sat.gob.mx/citasat/home.aspx')" mat-raised-button color="primary">
+                    
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
