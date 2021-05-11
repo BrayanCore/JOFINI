@@ -38,7 +38,6 @@ export class Section1Component implements OnInit {
         this.queessat="";
         this.utilidad="";
         this.contribuyentes="";
-       
 
         data.forEach(
           element => {
@@ -56,9 +55,9 @@ export class Section1Component implements OnInit {
               case"contribuyentes":
               this.contribuyentes = element["content"]
               break;
-              
             
               default:
+                console.warn("Elemento desconocido proveniente de la base de datos")
                 break;
             }
 
@@ -203,8 +202,19 @@ export class Section1Component implements OnInit {
 
   
 
-  goToLink(url: string){
-    window.open(url, "_blank");
+  goToLink(url){
+    
+    if (typeof url === 'string') {
+
+      // Hacer prueba aquí
+      window.open(url, "_blank");
+    
+    } else {
+    
+      this._sectionService.handleError("URL inválido", "URL no encontrada")
+
+    }
+
   }
 
 }

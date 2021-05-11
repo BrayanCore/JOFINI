@@ -1,1 +1,64 @@
-<p>section5 works!</p>
+<div class="grid-container">
+    <div class="header">
+        <div *ngFor="let label of labels; let i = index">
+            <a class="link" routerLink="{{links[i]}}" routerLinkActive="active">{{label}}</a>
+        </div>
+    </div>
+    <div class="body">
+        
+        <div class="section-1">
+            <h1 class="title">Facturas.</h1>
+            <img class="images" src="../../../assets/images/factura.jpg" alt="Factura">
+            <p class="definition">
+                {{definition}}
+            </p>
+        </div>
+        
+        <div class="section-2">
+            <div class="left-side">
+                <div class="article-top">
+                    <h1 class="title">¿Quién está obligado a facturar?</h1>
+                    <p class="content">
+                        {{obligadosFacturar}}
+                    </p>
+                </div>
+                <div class="article-down">
+                    <h1 class="title">Tipos:</h1>
+                    <ul class="list">
+                        <li *ngFor="let element of typesInvoice">
+                            {{element}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side">
+                <h1 class="title">Cuando emitir facturas:</h1>
+                <ul class="list">
+                    <li *ngFor="let element of emitInvoices">
+                        {{element}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-3">
+            <div class="top">
+                <h1 class="title">Características:</h1>
+            </div>
+            <div class="content">
+                <img class="image" src="../../../assets/images/factura-2.jpg" alt="Factura Imagen">
+                <ul class="list">
+                    <li *ngFor="let element of characteristics">
+                        {{element}}
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <button class="button" (click)="goToLink('https://www.sat.gob.mx/aplicacion/82868/genera-tu-factura-electronica-de-forma-gratuita')" mat-raised-button color="primary">
+                    Genera tu factura
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { New } from '../models/section.model';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -47,17 +48,33 @@ export class SectionService {
       case 5:
         return this.newsMain;
       default:
+        this.handleError("La colección requerida no existe", "Solicitud de información inexistente")
         break;
     }
 
   }
 
-  addNew(element: New, where: string) {
+  addNew(element: New, where: string): void {
 
     this.newsCollection = this.db.collection(where);
-    this.newsCollection.add(element);
+    this.newsCollection.add(element).then(
+      (response) => {
+        Swal.fire('NOTICIA GUARDADA', 'CIERRA EL DIALOGO', 'success')
+      }
+    ).catch(
+      (error) => {
+        this.handleError(error, "Error al guardar noticia en la base de datos")
+      }
+    )
 
   }
 
+  // error = message to programmer, message = message to user
+  handleError(error: any, message: string) {
+
+    Swal.fire('OCURRIÓ UN ERROR', `${message}`, 'error');
+    console.warn(error);
+
+  }
 
 }
