@@ -1,1 +1,123 @@
-<p>section4 works!</p>
+<div class="grid-container">
+    <div class="header">
+        <div *ngFor="let label of labels; let i = index">
+            <a class="link" routerLink="{{links[i]}}" routerLinkActive="active">{{label}}</a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="screen-1">
+           
+            <div class="definition">
+                <h2 style="margin:0%"> 
+                    <p>   Consejos de ahorro  </p>   
+                    <p>     </p> 
+                      </h2>
+                <p style="text-align: justify;">
+                    
+              
+                </p>
+                    <p style="text-align: justify;"> 
+             
+                    </p>
+
+                    <p>    
+                    
+                </p>
+                
+
+
+                <h2 style="margin: 0;">Estos son 10 consejos de ahorro:         </h2>
+
+           
+
+            <div class="tiposImpuestos">
+               
+                    <div class="list">
+                        <ol type="1">
+                            <li *ngFor="let item of Ahorro">
+                                <strong>{{item.name}}:</strong> {{item.value}}
+                            </li>
+                        </ol>
+                     
+                    </div>
+               
+            </div>
+
+        </div>
+            <div class="benefits">
+                <h2 class="title">         </h2>
+                <div class="government">
+                   
+                   <ul class="list">
+                    <div class="list">
+                        <ul class="items">
+                         
+                        </ul>
+                    </div>
+                </ul>
+                  
+                    
+                </div>
+            </div>
+        </div>
+        <div class="screen-2">
+            <div class="characteristics">            
+                    
+                <div class="title">
+                   
+                    <h1 class="text">     </h1>
+                    
+                </div>
+
+                 <img class="imcp" href="https://www.sat.gob.mx/personas/iniciar-sesion" src="../../../assets/images/imcp.jpg" alt="LogoSAT">
+               
+                <div class="list">
+                       
+                  <p style="text-align: justify;">          Para dar el siguiente paso en el ahorro el <a href="https://tienda.imcp.org.mx/v2/index.php?id_tienda=imcp">Instituto Mexicano de Contadores
+                       Públicos (IMCP)</a> tiene cursos y libros en donde se ensena a como dar el siguiente paso 
+                       en el tema del ahorro, con su libro para todas las edades llamado como construir tu 
+                       libertad financiera, el cual habla sobre consejos y guias que pueden ser útiles para
+                        obtener la libertad financiera.        </p>
+
+
+                        
+                    <br>
+                  
+                </div>
+                <img class="im" href="https://www.sat.gob.mx/personas/iniciar-sesion" src="../../../assets/images/libro.jpg" alt="LogoSAT">
+                   
+                
+
+
+
+             
+                <h1 class="sat">    </h1>
+                <div class="satt">
+                <p style="text-align: justify;">
+                    Según la procuraduría federal del consumidor (Profeco),<i> "30% de los mexicanos que ahorran, 
+                    lo hacen a través de medios informales como las tandas, los “guardaditos” y las alcancías.
+                     Así mismo, siete de cada 10 adultos mayores no recibe pensión y 86% se arrepiente de no 
+                     haber ahorrado para esta etapa de la vida."</i>
+                    </p>  
+
+            </div>
+           
+                    <div class="imagen">
+
+                        <img class="ima" href="https://www.sat.gob.mx/personas/iniciar-sesion" src="../../../assets/images/profeco.jpg" alt="LogoSAT">
+                   
+                             </div>
+                
+           
+            <div class="procedure">
+                <h2 class="title">          </h2>
+                <h3 class="title">          </h3>
+                <p style="text-align: center;">          <a title="Abre en nueva ventana" target="_blank" href="https://www.sat.gob.mx/personas/directorio-nacional-de-modulos-de-servicios-tributarios">   </a> </p>
+                <h3 class="title">          </h3>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
