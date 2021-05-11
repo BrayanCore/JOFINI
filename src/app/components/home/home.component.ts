@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
                 break;
             
               default:
+                console.warn("Elemento desconocido proveniente de la base de datos")
                 break;
             }
           }
@@ -48,29 +49,6 @@ export class HomeComponent implements OnInit {
       }
     )
 
-  }
-
-  redirectToSection(i: number){
-    switch (i) {
-      case 0:
-        console.log(i)
-        break;
-      case 1:
-        console.log(i)
-        break;
-      case 2:
-        console.log(i)
-        break;
-      case 3:
-        console.log(i)
-        break;
-      case 4:
-        console.log(i)
-        break;
-    
-      default:
-        break;
-    }
   }
 
 }
