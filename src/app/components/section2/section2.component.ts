@@ -8,8 +8,8 @@ import { SectionService } from 'src/app/services/section.service';
 })
 export class Section2Component implements OnInit {
 
-  labels: string[] = ['IMPUESTOS', 'PAGINA PRINCIPAL', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
-  links: string[] = ['/taxs', '/', '/credit-cards', '/saving-tips', '/bills'];
+  labels: string[] = ['IMPUESTOS', 'FIRMA ELÉCTRONICA', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
+  links: string[] = ['/taxs', '/', '/credit-cards', '/saving-tips', '/'];
 
   definition: string = "";
 
@@ -105,6 +105,7 @@ export class Section2Component implements OnInit {
                 break;
             
               default:
+                console.warn("Elemento desconocido proveniente de la base de datos")
                 break;
             }
 
@@ -116,8 +117,19 @@ export class Section2Component implements OnInit {
 
   }
 
-  goToLink(url: string){
-    window.open(url, "_blank");
+  goToLink(url){
+
+    if (typeof url === 'string') {
+
+      // Hacer prueba aquí
+      window.open(url, "_blank");
+    
+    } else {
+    
+      this._sectionService.handleError("URL inválido", "URL no encontrada")
+
+    }
+
   }
 
 }

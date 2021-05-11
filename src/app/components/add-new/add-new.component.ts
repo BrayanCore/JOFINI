@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { New } from 'src/app/models/section.model';
 import { SectionService } from 'src/app/services/section.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-new',
@@ -54,7 +53,6 @@ export class AddNewComponent implements OnInit {
     this._sectionService.addNew(newToAdd, this.sections[this.sectionSelected.value].viewValue);
     this.newForm.reset();
     this.sectionSelected.setValue(this.sections[0].value);
-    Swal.fire('NOTICIA GUARDADA', 'CIERRA EL DIALOGO', 'success')
 
   }
 

@@ -1,0 +1,245 @@
+@mixin center-things {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin class-grid-container($rows, $columns, $width, $height) {
+
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    height: $height;
+    width: $width;
+
+}
+
+@mixin class-header($link-size) {
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    .link {
+        font-size: $link-size;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@mixin class-grid-container-same-size($rows, $columns, $width, $height) {
+    $size-columns: (100/$columns)*1%;
+    $size-rows: (100/$rows)*1%;
+
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($size-columns, $size-columns));
+    grid-template-rows: repeat($rows, minmax($size-rows, $size-rows));
+    height: $height;
+    width: $width;
+}
+
+@mixin title($font-size) {
+    font-size: $font-size;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+@mixin class-body() {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 100%;
+    grid-auto-flow: column;
+    .section-1 {
+        width: 100%;
+        height: 100%;
+        @include center-things();
+        flex-direction: column;
+        .title {
+            @include title(2rem);
+        }
+        .definition {
+            font-size: 1rem;
+            margin-top: 1rem;
+            width: 70%;
+            text-align: center;
+        }
+        .images {
+            width: auto;
+            height: 15rem;
+            max-width: 100%;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+    }
+    .section-2 {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+        grid-auto-flow: column;
+        .left-side {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+            .article-top {
+                @include center-things();
+                flex-direction: column;
+                .title {
+                    @include title(2rem);
+                }
+                .content {
+                    height: 100%;
+                    font-size: 1rem;
+                    width: 50%;
+                    text-align: center;
+                    @include center-things();
+                }
+            }
+            .article-down {
+                @include center-things();
+                flex-direction: column;
+                .title {
+                    @include title(2rem);
+                }
+                .list {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                }
+            }
+        }
+        .right-side {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 10% 90%;
+            grid-auto-flow: row;
+            .title {
+                @include center-things();
+                @include title(2rem);
+            }
+            .list {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                flex-direction: column;
+                overflow: hidden;
+                word-wrap: break-word;
+            }
+        }
+    }
+    .section-3 {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 80% 10%;
+        grid-auto-flow: row;
+        .top {
+            @include center-things();
+            .title {
+                margin: 0%;
+                @include title(2rem);
+            }
+        }
+        .content {
+            @include center-things();
+            flex-direction: row;
+            overflow: hidden;
+            .image {
+                height: auto;
+                max-height: 90%;
+                width: 40%;
+                border: 2px solid black;
+                border-radius: 50%;
+            }
+            .list {
+                height: 100%;
+                width: 40%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                flex-direction: column;
+                overflow-y: auto;
+                word-wrap: break-word;
+                font-size: .7rem;
+            }
+        }
+        .footer {
+            @include center-things();
+        }
+    }
+};
+
+
+
+// Small devices
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+    .grid-container{
+        @include class-grid-container(10% 90%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header(.6rem);
+        }
+        .body {
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body();
+        }
+    }
+}
+
+// Medium devices  
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .grid-container{
+        @include class-grid-container(10% 90%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header(1rem);
+        }
+        .body {
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body();
+        }
+    }
+}
+
+// Large devices
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .grid-container{
+        @include class-grid-container(7.5% 92.5%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header(1rem);
+        }
+        .body {
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body();
+        }
+    }
+}
+
+// Extra large devices
+@media only screen and (min-width: 993px) {
+    .grid-container{
+        @include class-grid-container(7.5% 92.5%, 100%, 100vw, 100vh);
+        .header {
+            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-header(1rem);
+        }
+        .body {
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
+            @include class-body();
+        }
+    }
+}
