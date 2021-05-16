@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { New } from '../models/section.model';
 import Swal from 'sweetalert2';
+import { Documento } from '../models/document.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,8 @@ export class SectionService {
 
   newsCollection: AngularFirestoreCollection<New>;
 
+  documents = new BehaviorSubject<Documento[]>([]);
+
   constructor(private readonly db: AngularFirestore) {
     
     this.newsTaxs = this.db.collection("Impuestos").valueChanges();
@@ -28,6 +31,30 @@ export class SectionService {
     this.newsInvoices = this.db.collection("Facturas").valueChanges();
     this.newsCredit = this.db.collection("Tarjetas de crédito").valueChanges();
     this.newsMain = this.db.collection("Principales").valueChanges();
+
+  }
+
+  loadCollection(collection: string) {
+
+    let docs: Documento[] = [];
+
+    this.db.collection(collection).get().subscribe(
+      (res) => {
+
+        res.docs.forEach((doc)=> {
+
+          const docu = new Documento();
+          docu.id = doc.id;
+          docu.new.title = doc.data()["title"];
+          docu.new.content = doc.data()["content"];
+          docs.push(docu);
+        
+        })
+
+        this.documents.next(docs);
+
+      }
+    );
 
   }
 
@@ -67,6 +94,17 @@ export class SectionService {
       }
     )
 
+  }
+
+  updateDocument(document: Documento, collection: string) {
+
+    this.db.collection(collection).doc(document.id).update(document.new).then(
+      (res) => {
+        this.loadCollection(collection);
+        Swal.fire('DOCUMENTO ACTUALIZADO EXITOSAMENTE', 'CIERRA EL DIALOGO', 'success')
+      }
+    )
+  
   }
 
   // error = message to programmer, message = message to user

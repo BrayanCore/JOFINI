@@ -1,0 +1,55 @@
+<div class="container">
+    
+    <div class="title">Modificar documento de la base de datos.</div>
+
+    <div class="content">
+        
+        <div>
+            <h4 style="text-align:center">Selecciona la sección.</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Sección seleccionada</mat-label>
+                <mat-select [formControl]="sectionSelected" name="section">
+                    <mat-option *ngFor="let section of sections" (click)="selectCollection()" [value]="section.viewValue">
+                        {{section.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div style="overflow-y: auto; width: 90%;">
+            <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel *ngFor="let document of documentsForm.controls; let i = index">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{document.controls.new.controls.title.value}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Abrir Documento
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <div class="panel-content" [formGroup]="document.controls.new">
+
+                        <mat-form-field>
+                            <mat-label>Título</mat-label>
+                            <input formControlName="title" matInput>
+                        </mat-form-field>
+                    
+                        <mat-form-field style="width: 90%">
+                            <mat-label>Contenido</mat-label>
+                            <input formControlName="content" matInput>
+                        </mat-form-field>
+
+                        <button mat-raised-button (click)="updateDocument(i)" color="primary">
+                            GUARDAR
+                        </button>
+
+                    </div>
+                
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        
+    </div>
+
+</div>

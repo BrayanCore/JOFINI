@@ -1,0 +1,37 @@
+@mixin center-things {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 90%;
+    width: 100vw;
+    height: 100vh;
+
+    .title {
+        @include center-things();
+        align-items: flex-end;
+        font-size: 2rem;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        height: 100%;
+        width: 100%;
+    }
+
+    .content {
+        @include center-things();
+        flex-direction: column;
+
+        .panel-content {
+            @include center-things();
+            flex-direction: column;
+        }
+
+    }
+
+}

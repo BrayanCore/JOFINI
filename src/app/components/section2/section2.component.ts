@@ -8,7 +8,7 @@ import { SectionService } from 'src/app/services/section.service';
 })
 export class Section2Component implements OnInit {
 
-  labels: string[] = ['IMPUESTOS', 'FIRMA ELÉCTRONICA', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
+  labels: string[] = ['IMPUESTOS', 'PAGINA PRINCIPAL', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
   links: string[] = ['/taxs', '/', '/credit-cards', '/saving-tips', '/'];
 
   definition: string = "";
