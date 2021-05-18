@@ -107,6 +107,19 @@ export class SectionService {
   
   }
 
+
+  deleteDocument(document: Documento, collection: string) {
+
+    this.db.collection(collection).doc(document.id).delete().then(
+      (res) => {
+        this.loadCollection(collection);
+        Swal.fire('DOCUMENTO ELIMINADO EXITOSAMENTE', 'CIERRA EL DIALOGO', 'success')
+      }
+    )
+  
+  }
+
+
   // error = message to programmer, message = message to user
   handleError(error: any, message: string) {
 

@@ -73,5 +73,6 @@ export class ModifyNewComponent implements OnInit {
   selectCollection() { this._sectionService.loadCollection(this.sectionSelected.value); }
 
   updateDocument(index: number) { this._sectionService.updateDocument(new Documento(this.documentsForm.controls[index].value), this.sectionSelected.value); }
+  deleteDocument(index: number) { this._sectionService.deleteDocument(new Documento(this.documentsForm.controls[index].value), this.sectionSelected.value); }
 
 }
