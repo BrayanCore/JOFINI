@@ -40,13 +40,15 @@
                             <input formControlName="content" matInput>
                         </mat-form-field>
 
-                        <button mat-raised-button (click)="updateDocument(i)" color="primary">
-                            GUARDAR
-                        </button>
-
-                        <button mat-raised-button (click)="deleteDocument(i)" color="primary">
-                            ELIMINAR
-                        </button>
+                        <div id="buttons">
+                            <button mat-raised-button (click)="updateDocument(i)" color="primary">
+                                GUARDAR
+                            </button>
+    
+                            <button mat-raised-button (click)="deleteDocument(i)" color="warn">
+                                ELIMINAR
+                            </button>
+                        </div>
 
                     </div>
                 
