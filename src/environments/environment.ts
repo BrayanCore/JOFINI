@@ -5,12 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyAQLVxkQFxWsqUf1KYWU44OouMPRjymppA",
-    authDomain: "jofini-a1b80.firebaseapp.com",
-    projectId: "jofini-a1b80",
-    storageBucket: "jofini-a1b80.appspot.com",
-    messagingSenderId: "935092406985",
-    appId: "1:935092406985:web:597ef3524d11a40ea0db18"
+    apiKey: "AIzaSyBn8d5QWAqwM17pPdZI0lCJaImHiw9n9TA",
+    authDomain: "jofini-7c9d5.firebaseapp.com",
+    databaseURL: "https://jofini-7c9d5-default-rtdb.firebaseio.com",
+    projectId: "jofini-7c9d5",
+    storageBucket: "jofini-7c9d5.appspot.com",
+    messagingSenderId: "155260736010",
+    appId: "1:155260736010:web:8b5209a01e371b374c05f3"
   }
 };
 
