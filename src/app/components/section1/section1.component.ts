@@ -22,7 +22,13 @@ export class Section1Component implements OnInit {
   utilidad: string ="";
 
   contribuyentes: string="";
-
+  
+  Federales: string="";
+  FederalesInfo: string="";
+  Estatales: string="";
+  EstatalesInfo: string="";
+  Municipales: string="";
+  MunicipalesInfo: string="";
 
   constructor(
     private _sectionService: SectionService
@@ -38,6 +44,14 @@ export class Section1Component implements OnInit {
         this.queessat="";
         this.utilidad="";
         this.contribuyentes="";
+        
+        this.Federales="";
+        this.FederalesInfo="";
+        this.Estatales="";
+        this.EstatalesInfo="";
+
+        this.Municipales="";
+        this.MunicipalesInfo="";
 
         data.forEach(
           element => {
@@ -56,6 +70,29 @@ export class Section1Component implements OnInit {
               this.contribuyentes = element["content"]
               break;
             
+              case"Federales":
+              this.Federales = element["content"]
+              break;
+
+              case"FederalesInfo":
+              this.FederalesInfo = element["content"]
+              break;
+
+              case"Estatales":
+              this.Estatales = element["content"]
+              break;
+
+              case"EstatalesInfo":
+              this.EstatalesInfo = element["content"]
+              break;
+
+              case"Municipales":
+              this.Municipales = element["content"]
+              break;
+
+              case"MunicipalesInfo":
+              this.MunicipalesInfo = element["content"]
+              break;
               default:
                 console.warn("Elemento desconocido proveniente de la base de datos")
                 break;
@@ -78,7 +115,7 @@ export class Section1Component implements OnInit {
     },
     {
       name:"2",
-      value: 'Accede a tu cuenta con tu tecleando tu RFC y contraseña o e.firma.'
+      value: 'Accede a tu cuenta con tu tecleando tu RFC y contraseña o E.firma.'
     },
     {
       name:"3",

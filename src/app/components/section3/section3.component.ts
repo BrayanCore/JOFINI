@@ -18,6 +18,10 @@ export class Section3Component implements OnInit {
   Credito: string = "";
   Comoobtener: string = "";
   
+  Clasica: string = "";
+
+  Prueba: string = "";
+  
 
 
   constructor(
@@ -32,6 +36,9 @@ export class Section3Component implements OnInit {
         this.Debito = "";
         this.Credito="";
         this.Comoobtener="";
+        
+        this.Clasica="";
+        this.Prueba="";
        
 
         data.forEach(
@@ -50,9 +57,17 @@ export class Section3Component implements OnInit {
               case"Comoobtener":
               this.Comoobtener = element["content"]
               break;
+              case"Clasica":
+              this.Clasica = element["content"]
+              break;
+
+              case"Prueba":
+              this.Prueba = element["content"]
+              break;
               
             
               default:
+                console.warn("Elemento desconocido proveniente de la base de datos")
                 break;
             }
 

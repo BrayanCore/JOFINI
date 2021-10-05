@@ -7,7 +7,9 @@
     <div class="body">
         <div class="screen-1">
             <div class="images">
-                <img class="image" src="../../../assets/images/Impuestos.jpg" alt="Impuestos">
+                <iframe width="500" height="250" src="https://www.youtube.com/embed/94fXgc0EFGI" title="YouTube video player"
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                 allowfullscreen></iframe>
             </div>
             <div class="definition">
                 <h2 style="margin:0%"> 
@@ -37,8 +39,14 @@
                 <ul class="list">
                     <div class="list">
                         <ul class="items">
-                            <li *ngFor="let item of tiposImpuestos">
-                                <strong>{{item.name}}:</strong> {{item.value}}
+                            <li>
+                                <strong>{{Federales}}:</strong> {{FederalesInfo}}
+                            </li>
+                            <li>
+                                <strong>{{Estatales}}:</strong> {{EstatalesInfo}}
+                            </li>
+                            <li>
+                                <strong>{{Municipales}}:</strong> {{MunicipalesInfo}}
                             </li>
                         </ul>
                     </div>
@@ -101,8 +109,10 @@
             </div>
            
                     <div class="imagen">
-                        <img class="ima" href="https://www.sat.gob.mx/personas/iniciar-sesion" src="../../../assets/images/LogoSAT.png" alt="LogoSAT">
-                    </div>
+                        <iframe width="500" height="250" src="https://www.youtube.com/embed/yAJvN8xKoww" title="YouTube video player"
+                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                         allowfullscreen></iframe> 
+                         </div>
                 
            
             <div class="procedure">

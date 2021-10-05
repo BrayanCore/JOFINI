@@ -177,7 +177,7 @@
         grid-template-rows: 20% 150%;
         grid-template-areas: 
         "a a a a"
-        "b f f c"
+        "b b c c"
         "d d d d"      
         "e e e e"
         "g g g g"
@@ -266,7 +266,7 @@
             @include center-things();
             display: flex;
             font-size: 100%;
-            grid-area: f;
+            grid-area: b;
             font-size: 150%;
             max-width: 200%;
             max-height: 200%;

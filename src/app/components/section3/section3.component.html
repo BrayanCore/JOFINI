@@ -7,7 +7,7 @@
     <div class="body">
         <div class="screen-1">
             <div class="images">
-                <img class="image" src="../../../assets/images/tarjeta.webp" alt="Impuestos">
+                <iframe width="500" height="250" src="https://www.youtube.com/embed/RLBODtdpV_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="definition">
                 <h2 style="margin:0%"> 
@@ -15,7 +15,11 @@
                     <p>     </p> 
                       </h2>
                 <p style="text-align: justify;">
-                   {{Tarjeta}}
+                   {{Prueba}}
+                   Una tarjeta de crédito es un documento de material plástico emitido
+                    por un banco o institución especializada a nombre de una persona, que
+                     podrá utilizarla para efectuar compras sin tener que pagar en efectivo y
+                      pudiendo, además, llevar el pago de los productos a períodos futuros.
               
                 </p>
                     <p style="text-align: justify;"> 
@@ -33,28 +37,38 @@
            
 
             <div class="tiposImpuestos">
-                <h2 style="margin: 0;">    Diferencia entre una tarjeta de credito y una de debito     </h2>
+                <h2 style="margin: 0;">    Como obtener una Tarjeta de Credito     </h2>
                 <ul class="list">
                     <div class="list">
-                     <p >{{Debito}}
-                        <br><br>
-                       <strong> {{Credito}}</strong>
+                     <p >Ya sea que algún banco te haya ofrecido una tarjeta pre aprobada o que estés pensando
+                        en solicitar una, la institución con la que saques tu tarjeta de crédito puede evaluar
+                         factores como tu historial crediticio, ingresos y capacidad de pago para la aprobación 
+                         y asignación de una  línea de crédito. <br>
+                         La línea de crédito establece el monto máximo de 
+                         dinero del que puedes disponer, ya sea para hacer el pago de tus compras utilizando el
+                          plástico o para disponer de efectivo. 
                         </p>
                     </div>
                 </ul>
             </div>
             <div class="benefits">
-                <h2 class="title"> Cómo obtener una tarjeta de crédito  </h2>
+                <h2 class="title"> Buro de Credito  </h2>
                 <div class="government">
                    
                    <ul class="list">
-                       <br>
-                    <p style="text-align: justify;"> Ya sea que algún banco te haya ofrecido una tarjeta pre aprobada o que estés pensando
-                        en solicitar una, la institución con la que saques tu tarjeta de crédito puede evaluar
-                         factores como tu historial crediticio, ingresos y capacidad de pago para la aprobación 
-                         y asignación de una  línea de crédito. La línea de crédito establece el monto máximo de 
-                         dinero del que puedes disponer, ya sea para hacer el pago de tus compras utilizando el
-                          plástico o para disponer de efectivo.     </p>
+                       
+                       
+                    <p style="text-align: justify;"> Se trata de una entidad privada que genera informes del historial
+                         de crédito de personas o empresas, en donde se incluye información relacionada al comportamiento
+                          de pagos de créditos hipotecarios o automotrices, cuentas de tarjetas de crédito o servicios
+                           básicos como luz o agua, entre otros.<br><br>
+                        Toda la información que se encuentra en el Buró de Crédito es confidencial, siendo compartida 
+                        a entidades financieras afiliadas que la soliciten.<br>
+                         Por ejemplo, si quieres obtener una tarjeta
+                         de crédito, un préstamo o un crédito hipotecario, el banco pedirá tu reporte al Buró de Crédito
+                         para evaluar si cumples con los requisitos necesarios. 
+     </p>
+                          
 
                     <div class="list">
                         <ul class="items">
@@ -75,20 +89,60 @@
                     <h1 class="text"> Tipos de tarjetas de credito    </h1>
                     
                 </div>
+                    
+
+                <div class="tabla">
+                    <table>
+                        <thead>
+                          <tr>
+                            <td></td>
+                            <th>Clasica</th>
+                            <th>Gold</th>
+                            <th>Platinum</th>
+                            <th>Black</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Descripcion</th>
+                            <td>
+                                {{Clasica}}
+                                Son las tarjetas más comunes que pueden sacar en un banco<br>
+                                Sus límites no son altos, los beneficios están pero puede que<br>
+                                no sean tan amplios, variados o exclusivos.<br>
+                                Además de beneficios y ventajas que son básicos.<br>
+                            
+                            </td>
+                            <td>Es una tarjeta dirigida a un grupo selecto de clientes en el mundo,<br>
+                                concede beneficios especiales de alto valor, tales como seguros y<br>
+                                servicios de asistencia en viajes.</td>
+                            <td>Es un servicio financiero que otorgan los bancos a determinados clientes;<br>
+                                 usualmente si tienen cierta lealtad con el banco, además de suficiente<br>
+                                  ingreso económico para solventarla.</td>
+                            <td>La Tarjeta más exclusiva de todas para clientes de alto perfil socioeconómico y<br>
+                                 que buscan la excelencia. Ofrece beneficios adicionales, acceso a salones VIP,<br>
+                                  asistencia global las 24 horas, además otros beneficios exclusivos.</td>
+                           
+                          </tr>
+                           <tr>
+                            <th>Ingresos Minimos<br> Para Solicitarla</th>
+                            <td>Desde $0 hasta $15,000</td>
+                            <td>Desde $10,000 hasta $60,000</td>
+                            <td>Desde $35,000 hasta $100,000</td>
+                            <td>Solamente se consigue por Invitacion, Es la tarjeta mas prestigiosa en el mundo</td>
+                            
+                          </tr>
+                           
+                          <tr>
+                            <th>Mejores Tarjetas</th>
+                            <td><button class="button" (click)="goToLink('https://www.kardmatch.com.mx/tipos-de-tarjetas/tarjetas-de-credito-sin-historial-crediticio.asp')" mat-raised-button color="primary">Tarjetas Clasicas</button></td>
+                            <td><button class="button" (click)="goToLink('https://www.kardmatch.com.mx/tipos-de-tarjetas/tarjetas-de-credito-oro.asp')" mat-raised-button color="primary">Tarjetas Gold</button></td>
+                            <td><button class="button" (click)="goToLink('https://www.kardmatch.com.mx/tipos-de-tarjetas/tarjetas-de-credito-platinum.asp')" mat-raised-button color="primary">Tarjetas Platinum</button></td>
+                            <td>N/A</td>
+                          </tr>
+                        <tbody>
+                      </table>
                 
-                <div class="list">
-                    <ul class="items">
-                        <li *ngFor="let item of Tipos">
-                            <strong>{{item.name}}:</strong> {{item.value}}
-                        </li>
-                        
-                    </ul>
-                  
-
-
-                </div>
-                <div class="imagenes">
-                <img class="im" src="../../../assets/images/tarjetas.jpg" alt="Impuestos">
                 </div>
 
 
@@ -103,9 +157,11 @@
             
                     </p>  
 
+                
                     <li *ngFor="let item of Costos">
-                        <strong>{{item.name}}:</strong> {{item.value}}
+                     <strong>{{item.name}}:</strong> {{item.value}}  
                     </li>
+                
                 </ul>
 
             </div>
@@ -120,10 +176,13 @@
          
             </p>  
 
-
+        
             <li *ngFor="let item of Fechas">
+                
                 <strong>{{item.name}}:</strong> {{item.value}}
+            
             </li>
+        
         </ul>
       
     </div>
