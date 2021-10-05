@@ -22,8 +22,9 @@ export class Section5Component implements OnInit {
   characteristics: string[] = [];
 
   constructor(
-    private _sectionService: SectionService
-  ) { }
+    private _sectionService: SectionService,
+  ) {
+  }
 
   ngOnInit(): void {
 
