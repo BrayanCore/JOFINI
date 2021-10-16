@@ -206,14 +206,26 @@
         }
         #video {
             width: 50%;
-            height: 90%;
+            height: 100%;
             align-self: center;
             justify-self: center;
         }
     }
 
     #do-it {
-        background-color: firebrick;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        #title {
+            color: #09A2AC;
+            font-weight: 500;
+        }
+        #button {
+
+        }
     }
 }
 

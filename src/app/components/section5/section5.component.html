@@ -72,11 +72,9 @@
                 </div>
 
                 <div id="space-definition">
-                    <h1 id="title">¿Qué son las facturas?</h1>
+                    <h1 id="title">{{title1}}</h1>
                     <p id="definition">
-                        Se trata de un documento mercantil que registra la información de una venta o de una prestación de un servicio. 
-                        <br> En ella se constata físicamente que se ha realizado de forma legal y satisfactoria una operación entre dos partes. 
-                        <br> Por tanto, da validez y comunica que se han abonado los correspondientes impuestos establecidos.
+                        {{definition}}
                     </p>
                 </div>
 
@@ -84,7 +82,7 @@
 
             <div id="details">
 
-                <h1 id="title">Explicación a detalle</h1>
+                <h1 id="title">{{title2}}</h1>
                 <div id="space-video">
                     <!-- <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe> -->
                     <iframe id="video"
@@ -99,18 +97,12 @@
 
             <div id="data-contain">
 
-                <h1 id="title">¿Qué datos debe contener?</h1>
+                <h1 id="title">{{title3}}</h1>
                 <h2 id="subtitle">
-                    Cualquier factura incluye una serie de características 
-                    imprescindibles y que hacen de cada una de ellas un documento único:
+                    {{subtitle3}}
                 </h2>
                 <ul id="list">
-                    <li>Presenta un número correlativo de acuerdo a una serie numérica.</li>
-                    <li>Incorpora los datos del comprador y del vendedor, como su nombre o razón social, el NIF y su dirección fiscal.</li>
-                    <li>La fecha en que se ha emitido.</li>
-                    <li>Una breve descripción del producto o del servicio que se ha realizado.</li>
-                    <li>Los impuestos que soporta (normalmente, IVA e IRPF) así como la cuota tributaria. Hay ocasiones en que determinadas actividades están exentas de IVA, lo que se debe hacer constar en la factura.</li>
-                    <li>Información sobre posibles descuentos o bonificaciones.</li>
+                    <li *ngFor="let item of characteristics">{{item}}</li>
                 </ul>
 
             </div>
@@ -121,19 +113,24 @@
 
             <div id="types">
 
-                <h1 id="title">Qué tipos de factura existen.</h1>
-                <a id="link" href="https://www.actividadeseconomicas.org/2019/04/que-tipos-de-facturas-existen-en-mexico.html">https://www.actividadeseconomicas.org/2019/04/que-tipos-de-facturas-existen-en-mexico.html</a>
+                <h1 id="title">{{title4}}</h1>
+                <a id="link" href="https://www.actividadeseconomicas.org/2019/04/que-tipos-de-facturas-existen-en-mexico.html">{{link}}</a>
 
             </div>
 
             <div id="how-make">
 
-                <h1 id="title">¿Cómo elaborar una factura?</h1>
+                <h1 id="title">{{title5}}</h1>
                 <iframe id="video" src="https://www.youtube.com/embed/9WSjUJ92acc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             </div>
 
             <div id="do-it">
+
+                <h1 id="title">{{title6}}</h1>
+                <button id="button" (click)="goToLink('https://www.sat.gob.mx/aplicacion/82868/genera-tu-factura-electronica-de-forma-gratuita')" mat-raised-button color="primary">
+                    Genera tú factura
+                </button>
 
             </div>
 

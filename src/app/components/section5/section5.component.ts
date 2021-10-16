@@ -21,6 +21,15 @@ export class Section5Component implements OnInit {
 
   characteristics: string[] = [];
 
+  title1: string = '';
+  title2: string = '';
+  title3: string = '';
+  title4: string = '';
+  title5: string = '';
+  title6: string = '';
+  link: string = '';
+  subtitle3: string = '';
+
   constructor(
     private _sectionService: SectionService,
   ) {
@@ -41,21 +50,36 @@ export class Section5Component implements OnInit {
           element => {
             
             switch (element["title"]) {
+              case "Titulo 1":
+                this.title1 = element["content"];
+              break;
+              case "Titulo 2":
+                this.title2 = element["content"];
+              break;
+              case "Titulo 3":
+                this.title3 = element["content"];
+              break;
+              case "Titulo 4":
+                this.title4 = element["content"];
+              break;
+              case "Titulo 5":
+                this.title5 = element["content"];
+              break;
+              case "Titulo 6":
+                this.title6 = element["content"];
+              break;
+              case "Link":
+                this.link = element["content"];
+              break;
               case "Definicion":
                 this.definition = element["content"];
-                break;
-              case "ObligadosFacturar":
-                this.obligadosFacturar = element["content"];
-                break;
-              case "emitir":
-                this.emitInvoices.push(element["content"]);
-                break;
-              case "Tipo":
-                this.typesInvoice.push(element["content"]);
-                break;
+              break;
+              case "Subtitulo 3":
+                this.subtitle3 = element["content"];
+              break;
               case "Caracteristica":
                 this.characteristics.push(element["content"]);
-                break;
+              break;
             
               default:
                 console.warn("Elemento desconocido proveniente de la base de datos")
