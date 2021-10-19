@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SectionService } from 'src/app/services/section.service';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 @Component({
   selector: 'app-section2',
   templateUrl: './section2.component.html',
   styleUrls: ['./section2.component.scss']
+
 })
 export class Section2Component implements OnInit {
 
@@ -34,6 +36,8 @@ export class Section2Component implements OnInit {
 
   constructor(
     private _sectionService: SectionService
+    // ,
+    // private _YouTubePlayerModule: YouTubePlayerModule
   ) { }
 
   ngOnInit(): void {
