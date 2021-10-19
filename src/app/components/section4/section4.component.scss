@@ -4,17 +4,12 @@
     justify-content: center;
 }
 
-@mixin right-things {
-    display: flex;
-    align-items:flex-end ;
-    justify-content: center;
-}
 
+$color-1:#00C8C8;
 @mixin class-grid-container($rows, $columns, $width, $height) {
 
-    display: grid;
-    grid-template-columns: $columns;
-    grid-template-rows: $rows;
+    display: flex;
+    flex-direction: column;
     height: $height;
     width: $width;
 
@@ -49,365 +44,270 @@
     // height: 185vh;
     width: $width;
     height: $height;
-    overflow: hidden;
-    display: grid;
+    // overflow: hidden;
+    // display: grid;
     // grid-template-rows: 85vh 100vh;
-    grid-template-rows: $grid-template-rows;
+    //grid-template-rows: $grid-template-rows;
     .screen-1 {
         @include class-screen-1($grid-columns-screen1, $grid-rows-screen1);
     };
     .screen-2 {
         @include class-screen-2($grid-columns-screen2, $grid-rows-screen2, $grid-areas-screen2);
     };
-    
-
+    .procedure-2{
+           @include seccion-cita();
+    }
 };
 
 @mixin class-screen-1($grid-columns, $grid-rows) {
-    height: 100%;
+  //  height: 100%;
     width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: grid;
-    // grid-template-columns: 50% 50%;
-    // grid-template-rows: 50% 50%;
-    grid-template-columns: $grid-columns;
-    grid-template-rows: $grid-rows;
-   
+
+    height: 325px;
+
+    display: flex;
+    // max-width: 100%;
+    // max-height: 100%;
+    // display: grid;
+    // // grid-template-columns: 50% 50%;
+    // // grid-template-rows: 50% 50%;
+    // grid-template-columns: $grid-columns;
+    // grid-template-rows: $grid-rows;
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    // .images {
+    //     width: 100%;
+    //     height: 100%;
+    //     @include center-things();
+    //     .image {
+    //         height: auto;
+    //         width: 90%;
+    //         border-radius: 1rem;
+    //     }
+    // }
     .definition {
         @include center-things();
-        text-align: center;
         flex-direction: column;
-        padding: 1rem;
-        width: 200%;
-        height: 250%;
-
-
-        .tiposImpuestos {
-            @include center-things();
+        padding: 2.5rem;
+        h2{
+            color: $color-1;
+            text-decoration: solid;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        p
+        {
+            color:grey;
             text-align: justify;
-            font-size: large;
-            flex-direction:column;
-            padding: 1rem;
-            width: 60%;
-            height: 80%;
-            .list{
-                width: 100%;
-                height: 100%;
-            }
-            
         }
-
+        ul > li {
+            list-style: none;
+            color: gray; text-align: justify;
+        }
+       
     }
+    // .video-area{
+    //     iframe{
+    //         width: 100%
+    //     }
 
-    
+    // }
+    .uses {
+//          background-image: url("/assets/images/5-usos-de-la-firma-electrónica-1024x682.jpg");
 
-    .benefits{
-      display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 20% 80%;
-        grid-template-areas: 
-        "a a" 
-        "b b"
-        ;
-        .title {
-            grid-area: a;
-            overflow: auto;
-            margin: 0%;
-            @include center-things();
-        }
-        .government {
-            grid-area: b;
-            overflow: hidden;
-           
-        }
-        
-    }
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-origin: content-box;
+//   background-size: cover;
+  
+//   width: 100%;
+iframe{
+    width: 100%;
+    height: 100%;
 }
+        // @include center-things();
+        // //border: 1px solid black;
+        // flex-direction: column;
+        // .list {
+        //     max-height: 100%;
+        //     max-width: 100%;
+        //     overflow: auto;
+        // }
+         img{
+            border-radius: 20px;
+            display: block;
+            margin: auto;
+        }
+    }
+   
+}
+@mixin seccion-cita(){
+ margin-top: 80px;
+    height: 325px;
+    width:100%;
+    background-color: $color-1;
+    color: #fff;
+    text-align: center;
+    h1{
+        font-size: 2.5rem;
+        margin-top: 25px;
+    padding: 37px 0;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 0.9rem;
+        a{
+                text-decoration: none;
+    font-weight: bold;
+            color: #fff;
+        }
+    }
+    button{
+    background: transparent;
+  border: 1px solid #fff;
+  padding: 12px;
+ 
+  outline: none;
+  width: 220px;
+  transition: all 500ms;
+
+    border-radius: 9px;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    display: block;
+    margin: auto;
+    }
+
+
+}
+
 
 @mixin class-screen-2($grid-columns, $grid-rows, $grid-areas) {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: grid;
-    // grid-template-columns: 50% 50%;
-    // grid-template-rows: 33.3% 33.3% 33.3%;
-    grid-template-columns: $grid-columns;
-    grid-template-rows: $grid-rows;
-    grid-template-areas: $grid-areas;
-    // "a a"
-    // "b c"
-    // "d d";
+    margin-top: 80px;
+    height: 325px;
+    width:100%;
 
-    
     .characteristics {
-        grid-area: a;
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25% 25%;
-        grid-template-rows: 20% 150%;
-        grid-template-areas: 
-        "a a a a"
-        "b f f c"
-        "d d d d"      
-        "e e e e"
-        "k i i j"
-        "g g g g"
-        "h h h h"
-        
-        ;
-        padding: 1rem;
-        border: 1px solid white;
+        width: 100%;
+    margin: 0 auto;
 
-        .sat{
-            @include center-things();
-            grid-area: a;
-                 max-height: 100%;
-                max-width: 100%;    
-                      
-        }
-
-        .logo{
-            @include center-things();
-            align-content: end;
-            align-items: flex-end;
-            grid-area: b;
-            height: 20;
-            width: 20%;
-            border-radius: 1rem;
-        }
-
-        .info{
-            @include center-things();
-
-            flex-direction: column;
-            border: 1px solid black;
-            grid-area: b;
-                 max-height: 60%;
-                max-width: 60%;
-                display: flex;
-
-        }
-
-        .title {
-            
-            grid-area: e;
-            @include center-things();
-            .text {
-                margin: 0%;
-            }
-            .sat{
-                @include center-things();
-            grid-area: a;
-                 max-height: 100%;
-                max-width: 100%;
-
-            }
-        }
-
-        .imcp{
-            @include center-things();
-            grid-area: k;
-
-            height: 70;
-            width: 90%;
-
-        }
-       
-        .list {
-            @include center-things();
-            grid-area: i;
-            display: flex;
-            align-items: center;
-            font-size: 150%;
-            max-width: 98%;
-            height: 100%;
-            border-top: 0cm black;
-            
-            border: 1px solid black;
-            
-        
-        }
-        .im{
-            grid-area: j;
-            align-items: flex-end;
-            height: 60;
-            width: 60%;
-                
-        }
-        .declarar{
-            grid-area: b;
-            @include center-things();
-            width: 100%;
-            height: 100%;
-            
-        }
-        .impuesto{
-            grid-area: b;
-            @include center-things();
-            width: 50%;
-            height: 50%;
-        }
-
-        .sat{
-            @include center-things();
-            grid-area: a;
-            font-size: 250%;
-        }
-        .satt{
-            @include center-things();
-            display: flex;
-            grid-area: f;
-            font-size: 150%;
-            max-width: 100%;
-            height: 40%;
-            
-    
-           
-        }
-        .parrafo{
-            @include center-things();
-            display: flex;
-            font-size: 100%;
-           
-            max-width: 100%;
-        }
-
-        .sattt{
-            @include center-things();
-            display: flex;
-            font-size: 100%;
-            grid-area: f;
-            max-width: 30%;
-            max-height: 30%;
-        }
-     
-        .imagen{
-            grid-area: b;
-             width: 100%;
-             height: 50%;
-             @include center-things();
-
-            .ima{
-                grid-area: b;
-                align-items: flex-end;
-                height: auto;
-                width: 70%;
-                border-radius: 1rem;
-
-            }
-        }
-    
+   h1{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-align: center;
+    //font-family: "ubuntu-bold";
+    color: $color-1;
+   }
+      
     }
-    
-}
-
-@mixin class-screen-3($grid-columns, $grid-rows, $grid-areas) {
-    
-    height: 100%;
+    .v-grid{
+        display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: grid;
-    // grid-template-columns: 50% 50%;
-    // grid-template-rows: 33.3% 33.3% 33.3%;
-    grid-template-columns: $grid-columns;
-    grid-template-rows: $grid-rows;
-    grid-template-areas: $grid-areas;
-    // "a a"
-    // "b c"
-    // "d d";
-    .characteristics {
-        grid-area: a;
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 20% 80%;
-        grid-template-areas: 
-        "a a a a"
-        "c c c c"
+    column-gap: initial;
+    gap: 10px;
+	//padding: 20px 120px;
+	margin-top: 20px;
+    }
+    .v-card{
+        background: #fff;
+		padding: 40px 20px;
+	//	border-radius: 10px;
+		display: inline-flex;
+		justify-content: center;
+		//border: 2px solid #fff;
+		align-items: center;
+		max-width: 250px;
+		position: relative;
         
-        ;
-        padding: 1rem;
-        border: 1px solid black;
-        .title {
-            grid-area: a;
-            @include center-things();
-            .text {
-                margin: 0;
-            }
+        h2{
+        margin: 0;
+      color: rgb(80, 79, 79) !important;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      
+
         }
-       
-        .list {
-            grid-area: c;
-            display: flex;
-            align-items: center;
-            .items {
-                max-height: 100%;
-                max-width: 100%;
-                overflow: auto;
-            }
-        }
+        p {
+      margin: 0;
+      color: gray !important;
+      font-size: 0.8rem;
+      text-align: justify;
+		}
+
+		img {
+			//margin-right: 15px;
+			width: 120px;
+            display: block;
+            margin: auto;
+            border-radius: 15px;
+		}
+
     }
-    .documents {
-        grid-area: b;
-        overflow: hidden;
-        @include center-things();
-        flex-direction: column;
-        border: 1px solid black;
-        .title {
-            margin: 0 0 1rem 0;
-        }
-        .table {
-            padding: 1rem;
-            background-color: white;
-            border: .2rem solid black;
-        }
-    }
-    .costs {
-        grid-area: c;
-        overflow: hidden;
-        @include center-things();
-        flex-direction: column;
-        border: 1px solid black;
-        .title {
-            margin: 0 0 1rem 0;
-        }
-        .table {
-            padding: 1rem;
-            background-color: white;
-            border: .2rem solid black;
-        }
-    }
-    .procedure {
-        grid-area: d;
-        overflow: hidden;
-        border: 1px solid black;
-        @include center-things();
-        flex-direction: column;
-        .title {
-            @include center-things();
-            margin: 0 0 0 0;
-            font-weight: bold;
-        }
-        .button {
-            width: 30%;
-        }
-    }
+    // .documents {
+    //     grid-area: b;
+    //     overflow: hidden;
+    //     @include center-things();
+    //     flex-direction: column;
+    //     border: 1px solid black;
+    //     .title {
+    //         margin: 0 0 1rem 0;
+    //     }
+    //     .table {
+    //         padding: 1rem;
+    //         background-color: white;
+    //         border: .2rem solid black;
+    //     }
+    // }
+    // .costs {
+    //     grid-area: c;
+    //     overflow: hidden;
+    //     @include center-things();
+    //     flex-direction: column;
+    //     border: 1px solid black;
+    //     .title {
+    //         margin: 0 0 1rem 0;
+    //     }
+    //     .table {
+    //         padding: 1rem;
+    //         background-color: white;
+    //         border: .2rem solid black;
+    //     }
+    // }
+    // .procedure {
+    //     grid-area: d;
+    //     overflow: hidden;
+    //     border: 1px solid black;
+    //     @include center-things();
+    //     flex-direction: column;
+    //     .title {
+    //         @include center-things();
+    //         margin: 0 0 0 0;
+    //         font-weight: bold;
+    //     }
+    //     .button {
+    //         width: 30%;
+    //     }
+    // }
 }
-
-
-
 
 // Small devices
 @media only screen and (min-width: 0px) and (max-width: 576px) {
     .grid-container{
         @include class-grid-container(10% 90%, 100%, 100vw, 200vh);
         .header {
-            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-grid-container-same-size(1, 5, 100vw, 80px);
             @include class-header(.6rem);
         }
         .body {
-            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2, Columns-screen3, Rows-screen3
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
             @include class-body(
                 100vw, 370vh, 
                 170vh 200vh,
@@ -427,11 +327,11 @@
     .grid-container{
         @include class-grid-container(10% 90%, 100%, 100vw, 200vh);
         .header {
-            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-grid-container-same-size(1, 5, 100vw, 80px);
             @include class-header(1rem);
         }
         .body {
-            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2, Columns-screen3, Rows-screen3
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
             @include class-body(
                 100vw, 185vh,
                 85vh 100vh,
@@ -450,11 +350,11 @@
     .grid-container{
         @include class-grid-container(7.5% 92.5%, 100%, 100vw, 200vh);
         .header {
-            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-grid-container-same-size(1, 5, 100vw, 80px);
             @include class-header(1rem);
         }
         .body {
-            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2, Columns-screen3, Rows-screen3
+            // Columns-screen1, Rows-screen1, Columns-screen2, Rows-screen2
             @include class-body(
                 100vw, 185vh,
                 85vh 100vh,
@@ -473,7 +373,7 @@
     .grid-container{
         @include class-grid-container(7.5% 92.5%, 100%, 100vw, 200vh);
         .header {
-            @include class-grid-container-same-size(1, 5, 100vw, 100%);
+            @include class-grid-container-same-size(1, 5, 100vw, 80px);
             @include class-header(1rem);
         }
         .body {
