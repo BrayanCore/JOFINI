@@ -9,12 +9,18 @@ import { Section4Component } from './components/section4/section4.component';
 import { Section5Component } from './components/section5/section5.component';
 import { AddNewComponent } from './components/add-new/add-new.component';
 import { ModifyNewComponent } from './components/modify-new/modify-new.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'taxs',
@@ -38,11 +44,13 @@ const routes: Routes = [
   },
   {
     path: 'add-new',
-    component: AddNewComponent
+    component: AddNewComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'modify-new',
-    component: ModifyNewComponent
+    component: ModifyNewComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 
 import { environment } from 'src/environments/environment';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { environment } from 'src/environments/environment';
     Section4Component,
     Section5Component,
     AddNewComponent,
-    ModifyNewComponent
+    ModifyNewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { environment } from 'src/environments/environment';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    MatIconModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
