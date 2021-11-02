@@ -128,4 +128,8 @@ export class SectionService {
 
   }
 
+  isLoggedIn(): boolean {
+    if (localStorage.getItem('token')) return true; else return false;
+  }
+
 }
