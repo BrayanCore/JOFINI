@@ -40,14 +40,10 @@ $color-1:#00C8C8;
 }
 
 @mixin class-body($width, $height, $grid-template-rows, $grid-columns-screen1, $grid-rows-screen1, $grid-columns-screen2, $grid-rows-screen2, $grid-areas-screen2) {
-    // width: 100vw;
-    // height: 185vh;
+
     width: $width;
     height: $height;
-    // overflow: hidden;
-    // display: grid;
-    // grid-template-rows: 85vh 100vh;
-    //grid-template-rows: $grid-template-rows;
+   
     .screen-1 {
         @include class-screen-1($grid-columns-screen1, $grid-rows-screen1);
     };
@@ -66,28 +62,13 @@ $color-1:#00C8C8;
     height: 325px;
 
     display: flex;
-    // max-width: 100%;
-    // max-height: 100%;
-    // display: grid;
-    // // grid-template-columns: 50% 50%;
-    // // grid-template-rows: 50% 50%;
-    // grid-template-columns: $grid-columns;
-    // grid-template-rows: $grid-rows;
+    
     div{
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    // .images {
-    //     width: 100%;
-    //     height: 100%;
-    //     @include center-things();
-    //     .image {
-    //         height: auto;
-    //         width: 90%;
-    //         border-radius: 1rem;
-    //     }
-    // }
+   
     .definition {
         @include center-things();
         flex-direction: column;
@@ -100,117 +81,21 @@ $color-1:#00C8C8;
         }
         p
         {
-            color:grey;
+            font-size: 1.5rem;
+            color: black;
             text-align: justify;
         }
     }
-    // .video-area{
-    //     iframe{
-    //         width: 100%
-    //     }
-
-    // }
-    .uses {
-//          background-image: url("/assets/images/5-usos-de-la-firma-electrónica-1024x682.jpg");
-
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-origin: content-box;
-//   background-size: cover;
   
-//   width: 100%;
+    .uses {
+
 iframe{
     width: 100%;
     height: 100%;
 }
-        // @include center-things();
-        // //border: 1px solid black;
-        // flex-direction: column;
-        // .list {
-        //     max-height: 100%;
-        //     max-width: 100%;
-        //     overflow: auto;
-        // }
+     
     }
-    // .benefits{
-    //     border: 1px solid black;
-    //     display: grid;
-    //     grid-template-columns: 50% 50%;
-    //     grid-template-rows: 20% 80%;
-    //     grid-template-areas: 
-    //     "a a" 
-    //     "b c";
-    //     .title {
-    //         grid-area: a;
-    //         overflow: hidden;
-    //         margin: 0%;
-    //         @include center-things();
-    //     }
-    //     .government {
-    //         grid-area: b;
-    //         overflow: hidden;
-    //         .image {
-    //             width: 30%;
-    //             display: block;
-    //             margin-left: auto;
-    //             margin-right: auto;
-    //         }
-    //         .subtitle {
-    //             text-align: center;
-    //             margin: .5rem 0 0 0;
-    //             font-weight: bold;
-    //         }
-    //         .list {
-    //             margin-top: 1px;
-    //             .item {
-    //                 font-size: .7rem;
-    //             }
-    //         }
-    //     }
-    //     .citizenship {
-    //         grid-area: c;
-    //         overflow: hidden;
-    //         .image {
-    //             width: 30%;
-    //             display: block;
-    //             margin-left: auto;
-    //             margin-right: auto;
-    //         }
-    //         .subtitle {
-    //             text-align: center;
-    //             margin: .5rem 0 0 0;
-    //             font-weight: bold;
-    //         }
-    //         .list {
-    //             margin-top: 0%;
-    //             .item {
-    //                 font-size: .7rem;
-    //             }
-    //         }
-    //     }
-
-    //     .citizenship-2 {
-    //         grid-area: d;
-    //         overflow: hidden;
-    //         .image {
-    //             width: 30%;
-    //             display: block;
-    //             margin-left: auto;
-    //             margin-right: auto;
-    //         }
-    //         .subtitle {
-    //             text-align: center;
-    //             margin: .5rem 0 0 0;
-    //             font-weight: bold;
-    //         }
-    //         .list {
-    //             margin-top: 0%;
-    //             .item {
-    //                 font-size: .7rem;
-    //             }
-    //         }
-    //     }
-    // }
+  
 }
 @mixin seccion-cita(){
  margin-top: 80px;
@@ -225,10 +110,10 @@ iframe{
     padding: 37px 0;
     }
     h2{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     p{
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         a{
                 text-decoration: none;
     font-weight: bold;
@@ -259,17 +144,7 @@ iframe{
     margin-top: 80px;
     height: 325px;
     width:100%;
-    // max-width: 100%;
-    // max-height: 100%;
-    // display: grid;
-    // // grid-template-columns: 50% 50%;
-    // // grid-template-rows: 33.3% 33.3% 33.3%;
-    // grid-template-columns: $grid-columns;
-    // grid-template-rows: $grid-rows;
-    // grid-template-areas: $grid-areas;
-    // "a a"
-    // "b c"
-    // "d d";
+
     .characteristics {
         width: 100%;
     margin: 0 auto;
@@ -281,44 +156,6 @@ iframe{
     //font-family: "ubuntu-bold";
     color: $color-1;
    }
-        // grid-area: a;
-        // display: grid;
-        // grid-template-columns: 25% 25% 25% 25%;
-        // grid-template-rows: 20% 80%;
-        // grid-template-areas: 
-        // "a a a a"
-        // "b c c c";
-        // padding: 1rem;
-        // border: 1px solid black;
-        // .title {
-        //     grid-area: a;
-        //     @include center-things();
-        //     .text {
-        //         margin: 0;
-        //     }
-        // }
-        // .image {
-        //     grid-area: b;
-        //     display: flex;
-        //     justify-content: flex-end;
-        //     align-items: center;
-        //     .pic {
-        //         height: auto;
-        //         width: 40%;
-        //         border: .4rem solid black;
-        //         border-radius: 1rem;
-        //     }
-        // }
-        // .list {
-        //     grid-area: c;
-        //     display: flex;
-        //     align-items: center;
-        //     .items {
-        //         max-height: 100%;
-        //         max-width: 100%;
-        //         overflow: auto;
-        //     }
-        // }
     }
     .v-grid{
         display: grid;
@@ -352,8 +189,8 @@ iframe{
         }
         p {
       margin: 0;
-      color: gray !important;
-      font-size: 0.8rem;
+      color: grayscale($color: #363030) !important;
+      font-size: 1rem;
       text-align: justify;
 		}
 
@@ -366,51 +203,7 @@ iframe{
 		}
 
     }
-    // .documents {
-    //     grid-area: b;
-    //     overflow: hidden;
-    //     @include center-things();
-    //     flex-direction: column;
-    //     border: 1px solid black;
-    //     .title {
-    //         margin: 0 0 1rem 0;
-    //     }
-    //     .table {
-    //         padding: 1rem;
-    //         background-color: white;
-    //         border: .2rem solid black;
-    //     }
-    // }
-    // .costs {
-    //     grid-area: c;
-    //     overflow: hidden;
-    //     @include center-things();
-    //     flex-direction: column;
-    //     border: 1px solid black;
-    //     .title {
-    //         margin: 0 0 1rem 0;
-    //     }
-    //     .table {
-    //         padding: 1rem;
-    //         background-color: white;
-    //         border: .2rem solid black;
-    //     }
-    // }
-    // .procedure {
-    //     grid-area: d;
-    //     overflow: hidden;
-    //     border: 1px solid black;
-    //     @include center-things();
-    //     flex-direction: column;
-    //     .title {
-    //         @include center-things();
-    //         margin: 0 0 0 0;
-    //         font-weight: bold;
-    //     }
-    //     .button {
-    //         width: 30%;
-    //     }
-    // }
+    
 }
 
 // Small devices

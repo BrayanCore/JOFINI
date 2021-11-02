@@ -10,20 +10,25 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 })
 export class Section2Component implements OnInit {
 
+  
+
   labels: string[] = ['IMPUESTOS', 'PAGINA PRINCIPAL', 'TARJETAS DE CRÉDITO', 'CONSEJOS DE AHORRO', 'FACTURAS'];
   links: string[] = ['/taxs', '/', '/credit-cards', '/saving-tips', '/'];
 
-  definition: string = "";
+  firma: string = "";
 
-  uses: string[] = [];
+  repudio: string = "";
 
-  examples: string[] = [];
+  opciones: string[] = [];
 
-  benefitsGovernment: string[] = [];
+  presencial1: string[] = [];
+  presencial2: string[] = [];
 
-  benefitsCitizenship: string[] = [];
+  confidencialidad: string[] = [];
 
-  characteristics: any[] = [];
+  integridad: string[] = [];
+
+  autenticacion: any[] = [];
 
   documents: any[] = [];
 
@@ -45,68 +50,47 @@ export class Section2Component implements OnInit {
     this._sectionService.getNews(1).subscribe(
       (data) => {
 
-        this.definition = "";
-        this.uses = [];
-        this.examples = [];
-        this.benefitsGovernment = [];
-        this.benefitsCitizenship = [];
-        this.characteristics = [];
+
+        this.firma="";
+
+        this.repudio = "";
+        this.opciones = [];
+        this.presencial1 = [];
+        this.presencial2 = [];
+        this.confidencialidad = [];
+        this.integridad = [];
+        this.autenticacion = [];
         this.documents = [];
 
         data.forEach(
           element => {
             
             switch (element["title"]) {
-              case "Definicion":
-                this.definition = element["content"]
+              case "firma":
+                this.firma = element["content"]
                 break;
-              case "Uso 1":
-                this.uses.push(element["content"])
+              case "Repudio":
+                this.repudio = element["content"]
                 break;
-              case "Uso 2":
-                this.uses.push(element["content"])
+              case "Opciones":
+                this.opciones.push(element["content"])
                 break;
-              case "Ejemplo":
-                this.examples.push(element["content"])
+              case "Presencial1":
+                this.presencial1.push(element["content"])
                 break;
-              case "Gobierno":
-                this.benefitsGovernment.push(element["content"])
-                break;
-              case "Ciudadania":
-                this.benefitsCitizenship.push(element["content"])
-                break;
-              case "Equivalencia Funcional":
-                this.characteristics.push(
-                  {
-                    name: element["title"],
-                    value: element["content"]
-                  }
-                )
-                break;
-              case "Autenticidad":
-                this.characteristics.push(
-                  {
-                    name: element["title"],
-                    value: element["content"]
-                  }
-                )
+                case "Presencial2":
+                  this.presencial2.push(element["content"])
+                  break;
+              case "Confidencialidad":
+                this.confidencialidad.push(element["content"])
                 break;
               case "Integridad":
-                this.characteristics.push(
-                  {
-                    name: element["title"],
-                    value: element["content"]
-                  }
-                )
+                this.integridad.push(element["content"])
                 break;
-              case "Documento":
-                this.documents.push(
-                  {
-                    name: element["content"],
-                    value: "Original"
-                  }
-                );
+              case "Autenticacion":
+                this.autenticacion.push(element["content"])
                 break;
+    
             
               default:
                 console.warn("Elemento desconocido proveniente de la base de datos")
