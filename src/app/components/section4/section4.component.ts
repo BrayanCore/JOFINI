@@ -10,9 +10,19 @@ export class Section4Component implements OnInit {
   labels: string[] = ['IMPUESTOS', 'FIRMA ELÉCTRONICA', 'TARJETAS DE CREDITO', 'PAGINA PRINCIPAL', 'FACTURAS'];
   links: string[] = ['/taxs', '/electronic-signature', '/credit-cards', '/', '/bills'];
 
-  Condusef: string = "";
-  Libro: string = "";
+  Consejos: string = "";
+  Definicion: string = "";
   Imcp: string = "";
+
+
+  Tarjeta: string = "";
+  Debito: string = "";
+  Credito: string = "";
+  Comoobtener: string = "";
+  
+  Clasica: string = "";
+
+  Prueba: string = "";
 
   constructor(
     
@@ -24,8 +34,8 @@ export class Section4Component implements OnInit {
     this._sectionService.getNews(0).subscribe(
       (data) => {
 
-        this.Condusef = "";
-        this.Libro = "";
+        this.Consejos = "";
+        this.Definicion = "";
         this.Imcp = "";
      
        
@@ -34,11 +44,11 @@ export class Section4Component implements OnInit {
           element => {
             
             switch (element["title"]) {
-              case "Condusef":
-                this.Condusef = element["content"]
+              case "Consejos":
+                this.Consejos = element["content"]
                 break;
-              case"Libro":
-                this.Libro= element["content"]
+              case"Definicion":
+                this.Definicion= element["content"]
                 break;   
                 case"Imcp":
                 this.Imcp= element["content"]

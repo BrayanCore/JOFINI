@@ -99,6 +99,13 @@
         padding: 1rem;
         width: 90%;
         height: 90%;
+        h2{
+            color: #09A2AC;  
+            font-size: 2.2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
     }
 
 
@@ -106,6 +113,10 @@
         @include center-things();
         border: 1px solid black;
         flex-direction: column;
+        h2{
+            color: #09A2AC;  
+            font-size: 2.2rem;
+        }
         .list {
             max-height: 100%;
             max-width: 100%;
@@ -126,6 +137,10 @@
             overflow: auto;
             margin: 0%;
             @include center-things();
+
+            color: #09A2AC;  
+            font-size: 2.2rem;
+            
         }
         .government {
             grid-area: b;
@@ -191,7 +206,11 @@
             @include center-things();
             grid-area: a;
                  max-height: 100%;
-                max-width: 100%;               
+                max-width: 100%;         
+                
+                    color: #09A2AC;  
+                    font-size: 2.2rem;
+                      
         }
 
         .logo{
@@ -219,9 +238,14 @@
         .title {
             
             grid-area: e;
+            
             @include center-things();
             .text {
                 margin: 0%;
+                
+                    color: #09A2AC;  
+                    font-size: 2.2rem;
+                
             }
             .sat{
                 @include center-things();
