@@ -10,62 +10,22 @@
                 <div class="definition">
                     <h2>¿Qué es una firma <br>Electronica?</h2>
                     <p>
-                        La firma electrónica es un concepto jurídico, equivalente electrónico al de la firma manuscrita, donde una
-                        persona
-                        acepta y da por validado el contenido de un mensaje electrónico a través de cualquier medio electrónico que sea
-                        legítimo
-                        y permitido
+
+                        {{firma}}
+                        
                     </p>
                 
                 </div>
-                <!-- <youtube-player videoId="https://www.youtube.com/watch?v=80_Cr9m-1fE"
-                 suggestedQuality="highres" 
-                 [height]="250" 
-                 [width]="500" 
-                 [startSeconds]="4"
-                    [endSeconds]="8">
-                </youtube-player> -->
-                <!-- <div class="video-area">
-                                <iframe [src]="getVideoIframe(https://www.youtube.com/watch?v=QaJF8UW8aic)" frameborder="0"
-                                    allow="accelerometer; 
-                                    autoplay; 
-                                    encrypted-media;
-                                    gyroscope;
-                                    picture-in-picture" 
-                                    allowfullscreen></iframe>
-                            </div> -->
+               
                 
                 <div class="uses">
-                    <iframe src="https://www.youtube.com/embed/HL8GDiu9VE4" title="YouTube video player"
+                    <iframe src="https://www.youtube.com/embed/94fXgc0EFGI" title="YouTube video player"
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
 
           
-<!-- 
-            <div class="benefits">
-                <h2 class="title">Beneficios</h2>
-                <div class="government">
-                    <img class="image" src="../../../assets/images/government.png" alt="Government">
-                    <p class="subtitle">Gobierno</p>
-                    <ul class="list">
-                        <li class="item" *ngFor="let item of benefitsGovernment">
-                            {{item}}
-                        </li>
-                    </ul>
-                </div>
-                <div class="citizenship">
-                    <img class="image" src="../../../assets/images/citizenship.png" alt="Citizenship">
-                    <p class="subtitle">Cuidadanía</p>
-                    <ul class="list">
-                        <li class="item" *ngFor="let item2 of benefitsCitizenship">
-                            {{item2}}
-                        </li>
-                    </ul>
-                </div>
- 
 
-            </div> -->
         </div>
 
 
@@ -83,9 +43,9 @@
                                 autenticación de usuarios
                                 </h2>
                                 <p>
-                                    Adapta tu plataforma con el<br>
-                                    logo y colores corporativos de<br>
-                                    tu marca
+                                   {{autenticacion}} 
+
+                                   
                                 </p>
                             </div>
                         </div>
@@ -94,9 +54,8 @@
                                 <img src="/assets/images/integridad.png" alt="OficinasYServiciosVirtuales">
                                <h2>Integridad</h2>
                                 <p>
-                                    Adapta tu plataforma con el<br>
-                                    logo y colores corporativos de<br>
-                                    tu marca
+                                    {{integridad}}
+                                   
                                 </p>
                             </div>
                         </div>
@@ -107,8 +66,8 @@
                                 No repudio
                                </h2>
                                 <p>
-                                    Administra tus propios cursos,<br>
-                                    los roles y niveles de acceso
+                                    {{repudio}}
+                                  
                                 </p>
                             </div>
                         </div>
@@ -117,77 +76,25 @@
                                 <img src="/assets/images/seguridad.png" alt="OficinasYServiciosVirtuales">
                                 <h2>La confidencialidad</h2>
                                 <p>
-                                    Genera diplomas en PDF y<br>
-                                    constancias como DC-3
+                                    {{confidencialidad}}
+                                   
                                 </p>
                             </div>
                         </div>
 
                     </div>
               
-                <!-- <div class="image">
-                    <img class="pic" src="../../../assets/images/firma-electronica2.gif" alt="Firma">
-                </div>
-                <div class="list">
-                    <ul class="items">
-                        <li *ngFor="let item of characteristics">
-                            <strong>{{item.name}}:</strong> {{item.value}}
-                        </li>
-                    </ul>
-                </div> -->
+               
             </div>
-            <!-- <div class="documents">
-                <h2 class="title">Documentos necesarios:</h2>
-                <table class="table">
-                    <tr>
-                        <th style="border-bottom: .2rem solid black;">
-                            Documento requerido
-                        </th>
-                        <th style="border-bottom: .2rem solid black;">
-                            Presentación
-                        </th>
-                    </tr>
-                    <tr *ngFor="let document of documents">
-                        <td>{{ document.name }}</td>
-                        <td>{{ document.value }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="costs">
-                <h2 class="title">Costos:</h2>
-                <table class="table">
-                    <tr>
-                        <th style="border-bottom: .2rem solid black;">
-                            Concepto
-                        </th>
-                        <th style="border-bottom: .2rem solid black;">
-                            Monto
-                        </th>
-                    </tr>
-                    <tr *ngFor="let cost of costs">
-                        <td>{{ cost.name }}</td>
-                        <td>{{ cost.value }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="procedure">
-                <h2 class="title">Opciones para realizar tu trámite:</h2>
-                <h3 class="title">Presencial:</h3>
-                <p style="text-align: center;">Acude ante cualquier oficina del SAT o en los <a title="Abre en nueva ventana" target="_blank" href="https://www.sat.gob.mx/personas/directorio-nacional-de-modulos-de-servicios-tributarios">Módulos</a> de Servicios Tributarios que ofrecen ese servicio, con previa cita.</p>
-                <h3 class="title">Citas por Internet:</h3>
-                <button class="button" (click)="goToLink('https://citas.sat.gob.mx/citasat/home.aspx')" mat-raised-button color="primary">
-                    Haz tu cita
-                </button>
-            </div> -->
-            <!-- holaaa -->
+           
         </div>
             <div class="procedure-2">
-                <h1>Opciones para realizar tu trámite:</h1>
+                <h1>{{opciones}}</h1>
                 <h2 class="title">Presencial:</h2>
-                <p style="text-align: center;">Acude ante cualquier oficina del SAT o en los <a title="Abre en nueva ventana"
+                <p style="text-align: center;">{{presencial1}} <a title="Abre en nueva ventana"
                         target="_blank"
                         href="https://www.sat.gob.mx/personas/directorio-nacional-de-modulos-de-servicios-tributarios">Módulos</a>
-                    de Servicios Tributarios que ofrecen ese servicio, con previa cita.</p>
+                   {{presencial2}}</p>
                 <h2 class="title">Citas por Internet:</h2>
                 <button class="button" (click)="goToLink('https://citas.sat.gob.mx/citasat/home.aspx')" mat-raised-button
                     color="primary">
@@ -195,6 +102,6 @@
                 </button>
             </div>
         
-        <!-- a -->
+        
     </div>
 </div>
